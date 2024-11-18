@@ -2,17 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>//localhost:1313/posts/demystifying-the-modes/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>//localhost:1313/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/preparing-to-learn/</loc>
+    <loc>//localhost:1313/posts/</loc>
+    <lastmod>2024-11-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/preparing-to-learn/</loc>
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/g-xxxxxxxxx/</loc>
+    <loc>//localhost:1313/g-xxxxxxxxx/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>//localhost:1313/tags/</loc>
   </url>
 </urlset>

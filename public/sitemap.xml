@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>https://ryanguitar.uk/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>https://ryanguitar.uk/posts/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/preparing-to-learn/</loc>
+    <loc>https://ryanguitar.uk/posts/preparing-to-learn/</loc>
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/g-xxxxxxxxx/</loc>
+    <loc>https://ryanguitar.uk/g-xxxxxxxxx/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://ryanguitar.uk/tags/</loc>
   </url>
 </urlset>

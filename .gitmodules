@@ -1,9 +1,3 @@
-[submodule "themes/nightfall"]
-	path = themes/nightfall
-	url = https://github.com/LordMathis/hugo-theme-nightfall
-[submodule "themes/lekh"]
-	path = themes/lekh
-	url = https://github.com/ba11b0y/lekh.git
 [submodule "themes/typo"]
 	path = themes/typo
 	url = https://github.com/tomfran/typo.git

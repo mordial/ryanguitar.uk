@@ -1,0 +1,67 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = "Ryan's Guitar Tuition"
+theme = 'typo'
+
+[taxonomies]
+tag = 'tags'
+
+# Google analytics code
+googleAnalytics = "G-xxxxxxxxx"
+
+[params]
+# Meta description
+description = "Ryan's Guitar Tuition"
+
+# Appearance settings
+theme = 'auto'
+colorPalette = 'default'
+hideHeader = false
+
+showFooter = false 
+
+# Intro on main page, content is markdown
+homeIntroTitle = 'Welcome'
+homeIntroContent = """
+I'm Ryan Kavanagh, a guitar teacher and software developer based in London. I've been teaching guitar for almost 4 years, 
+and currently work with between 30 and 40 students ever week. Contact me [via email](mailto:contact@ryanguitar.uk) if you'd 
+like to arrange a lesson. 
+"""
+
+# Collection to display on home
+homeCollectionTitle = 'Posts'
+homeCollection = 'posts'
+
+# Lists parameters
+paginationSize = 100
+listSummaries = true
+listDateFormat = '2 Jan 2006'
+
+# Breadcrumbs
+breadcrumbs = true
+
+[[params.social]]
+name = "youtube"
+url = "https://youtube.com/@ryanguitaruk"
+
+[[params.social]]
+name = "instagram"
+url = "https://instagram.com/ryanguitar.uk"
+
+# Main menu pages
+[[params.menu]]
+name = "home"
+url = "/"
+
+[[params.menu]]
+name = "posts"
+url = "/posts"
+
+[[params.menu]]
+name = "tags" 
+url = "/tags"
+
+# Syntax highlight on code blocks
+[markup]
+[markup.highlight]
+style = 'algol'

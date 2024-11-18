@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>G Xxxxxxxxx on Ryan&#39;s Guitar Tuition</title>
-    <link>https://ryanguitar.uk/g-xxxxxxxxx/</link>
+    <link>/g-xxxxxxxxx/</link>
     <description>Recent content in G Xxxxxxxxx on Ryan&#39;s Guitar Tuition</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://ryanguitar.uk/g-xxxxxxxxx/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/g-xxxxxxxxx/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

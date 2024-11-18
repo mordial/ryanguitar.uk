@@ -23,7 +23,7 @@ showFooter = false
 homeIntroTitle = 'Welcome'
 homeIntroContent = """
 I'm Ryan Kavanagh, a guitar teacher and software developer based in London. I've been teaching guitar for almost 4 years, 
-and currently work with between 30 and 40 students ever week. Contact me [via email](mailto:contact@ryanguitar.uk) if you'd 
+and currently work with between 30 and 40 students every week. Contact me [via email](mailto:contact@ryanguitar.uk) if you'd 
 like to arrange a lesson. 
 """
 

@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'literata';
     overflow: hidden;
     margin: 0;
     min-width: 700px;
     display: flex;
     justify-content: center;
-    background-color: #282828;
-    color: #939394;
+    background-color: rgb(20, 20, 20);
+    color: white;
 }
 
 #settings {
@@ -32,11 +32,21 @@ body {
     justify-content: center;
 }
 
+#nav {
+    margin-top: 30px;
+}
+
+#nav > a {
+    color: #939394;
+}
+
 input[ type="number" ], input[ type="text" ] {
+    font-family: 'literata';
     background-color: transparent;
     border: none;
     font-size: 18px;
     text-align: center;
+    color: #939394;
 }
 
 input {
@@ -67,6 +77,7 @@ fieldset {
 }
 
 button {
+    font-family: 'literata';
     width: 170px;
     height: 40px;
     margin: 10px;
@@ -74,7 +85,7 @@ button {
     border-radius: 3px;
     background-color: #ffffff1e;
     box-shadow: rgba(0, 0, 0, 0.075) 0px 0px 0px 1px;
-    color: #939394;
+    color: white;
 }
 
 button:hover {

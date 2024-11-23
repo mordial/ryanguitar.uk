@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/canvas.js":
-/*!***********************!*\
-  !*** ./src/canvas.js ***!
-  \***********************/
+/***/ "./custom_pages/fretboard/canvas.js":
+/*!******************************************!*\
+  !*** ./custom_pages/fretboard/canvas.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -14,8 +14,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   colours: () => (/* binding */ colours),
 /* harmony export */   draw: () => (/* binding */ draw)
 /* harmony export */ });
-/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ "./src/main.js");
-/* harmony import */ var _presets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./presets */ "./src/presets.js");
+/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ "./custom_pages/fretboard/main.js");
+/* harmony import */ var _presets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./presets */ "./custom_pages/fretboard/presets.js");
 
 
 
@@ -59,7 +59,7 @@ function draw( data )
         ctx.lineTo( offset.left + fretboard.width, offset.top + ( x * stringGap ))
 
         ctx.fillStyle = colours.leftClick
-        ctx.font = "17px Poppins"
+        ctx.font = "17px literata"
         ctx.textAlign = "center"
         ctx.fillText( 
             data.strings[ x ].pitch.toUpperCase(),
@@ -75,7 +75,7 @@ function draw( data )
         ctx.lineTo( offset.left + ( x * fretGap ), offset.top + fretboard.height ) 
 
         ctx.fillStyle = colours.leftClick
-        ctx.font = "17px Poppins"
+        ctx.font = "17px literata"
         ctx.textAlign = "center"
         ctx.fillText( 
             x + data.startFret,
@@ -113,7 +113,7 @@ function draw( data )
             ctx.beginPath()
 
             ctx.fillStyle = colours.noteText
-            ctx.font = `${ fretGap / 5 }px Poppins`
+            ctx.font = `${ fretGap / 5 }px literata`
             ctx.textAlign = "center"
 
             let rootOffset = _main__WEBPACK_IMPORTED_MODULE_0__.notes[ data.accidentals ].indexOf( data.strings[ x ].pitch )
@@ -215,10 +215,10 @@ function setValues( data )
 
 /***/ }),
 
-/***/ "./src/main.js":
-/*!*********************!*\
-  !*** ./src/main.js ***!
-  \*********************/
+/***/ "./custom_pages/fretboard/main.js":
+/*!****************************************!*\
+  !*** ./custom_pages/fretboard/main.js ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -226,8 +226,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   gatherParameters: () => (/* binding */ gatherParameters),
 /* harmony export */   notes: () => (/* binding */ notes)
 /* harmony export */ });
-/* harmony import */ var _canvas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./canvas */ "./src/canvas.js");
-/* harmony import */ var _presets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./presets */ "./src/presets.js");
+/* harmony import */ var _canvas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./canvas */ "./custom_pages/fretboard/canvas.js");
+/* harmony import */ var _presets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./presets */ "./custom_pages/fretboard/presets.js");
 
 
 
@@ -372,20 +372,20 @@ function downloadFretboard()
 
 /***/ }),
 
-/***/ "./src/presets.js":
-/*!************************!*\
-  !*** ./src/presets.js ***!
-  \************************/
+/***/ "./custom_pages/fretboard/presets.js":
+/*!*******************************************!*\
+  !*** ./custom_pages/fretboard/presets.js ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-var _docs_presets_json__WEBPACK_IMPORTED_MODULE_2___namespace_cache;
+var _presets_json__WEBPACK_IMPORTED_MODULE_2___namespace_cache;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ loadPreset)
 /* harmony export */ });
-/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ "./src/main.js");
-/* harmony import */ var _canvas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./canvas */ "./src/canvas.js");
-/* harmony import */ var _docs_presets_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../docs/presets.json */ "./docs/presets.json");
+/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ "./custom_pages/fretboard/main.js");
+/* harmony import */ var _canvas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./canvas */ "./custom_pages/fretboard/canvas.js");
+/* harmony import */ var _presets_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./presets.json */ "./custom_pages/fretboard/presets.json");
  
 
  
@@ -420,9 +420,9 @@ function loadPreset( data )
         alert( 'Incorrect accidentals entered' )
         return 
     }
-    if( Object.keys( /*#__PURE__*/ (_docs_presets_json__WEBPACK_IMPORTED_MODULE_2___namespace_cache || (_docs_presets_json__WEBPACK_IMPORTED_MODULE_2___namespace_cache = __webpack_require__.t(_docs_presets_json__WEBPACK_IMPORTED_MODULE_2__, 2))) ).includes( scale ) ) 
+    if( Object.keys( /*#__PURE__*/ (_presets_json__WEBPACK_IMPORTED_MODULE_2___namespace_cache || (_presets_json__WEBPACK_IMPORTED_MODULE_2___namespace_cache = __webpack_require__.t(_presets_json__WEBPACK_IMPORTED_MODULE_2__, 2))) ).includes( scale ) ) 
     {
-        solveFrets( data, root, /*#__PURE__*/ (_docs_presets_json__WEBPACK_IMPORTED_MODULE_2___namespace_cache || (_docs_presets_json__WEBPACK_IMPORTED_MODULE_2___namespace_cache = __webpack_require__.t(_docs_presets_json__WEBPACK_IMPORTED_MODULE_2__, 2)))[ scale ] ) 
+        solveFrets( data, root, /*#__PURE__*/ (_presets_json__WEBPACK_IMPORTED_MODULE_2___namespace_cache || (_presets_json__WEBPACK_IMPORTED_MODULE_2___namespace_cache = __webpack_require__.t(_presets_json__WEBPACK_IMPORTED_MODULE_2__, 2)))[ scale ] ) 
     } 
     else {
         alert( 'Scale not found' ) 
@@ -465,10 +465,10 @@ function solveFrets( data, root, intervals )
 
 /***/ }),
 
-/***/ "./docs/presets.json":
-/*!***************************!*\
-  !*** ./docs/presets.json ***!
-  \***************************/
+/***/ "./custom_pages/fretboard/presets.json":
+/*!*********************************************!*\
+  !*** ./custom_pages/fretboard/presets.json ***!
+  \*********************************************/
 /***/ ((module) => {
 
 module.exports = /*#__PURE__*/JSON.parse('{"major":[2,2,1,2,2,2,1],"minor":[2,1,2,2,1,2,2],"ionian":[2,2,1,2,2,2,1],"dorian":[2,1,2,2,2,1,2],"phrygian":[1,2,2,2,1,2,2],"lydian":[2,2,2,1,2,2,1],"mixolydian":[2,2,1,2,2,1,2],"aeolian":[2,1,2,2,1,2,2],"locrian":[1,2,2,1,2,2,2],"harmonic minor":[2,1,2,2,1,3,1],"melodic minor":[2,1,2,2,2,2,1],"minor pentatonic":[3,2,2,3,2],"major pentatonic":[2,2,3,2,3],"blues":[3,2,1,1,3,2]}');
@@ -565,8 +565,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"major":[2,2,1,2,2,2,1],"minor":[2,1,
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/main.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./custom_pages/fretboard/main.js");
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=main.js.map

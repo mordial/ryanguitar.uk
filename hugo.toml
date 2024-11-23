@@ -22,8 +22,8 @@ showFooter = false
 # Intro on main page, content is markdown
 homeIntroTitle = 'Welcome'
 homeIntroContent = """
-I'm Ryan Kavanagh, a guitar teacher and software developer based in London. I've been teaching guitar for almost 4 years, 
-and currently work with between 30 and 40 students every week. Contact me [via email](mailto:contact@ryanguitar.uk) if you'd 
+I'm Ryan, a guitar teacher and software developer based in London. I've been teaching guitar for almost 4 years, 
+and currently work with over 30 students every week. Contact me [via email](mailto:contact@ryanguitar.uk) if you'd 
 like to arrange a lesson. 
 """
 
@@ -57,8 +57,18 @@ name = "posts"
 url = "/posts"
 
 [[params.menu]]
-name = "tags" 
-url = "/tags"
+name = "fretboard"
+url = "/fretboard"
+
+#[[params.menu]]
+#name = "chords"
+#url = "/chords" 
+
+#[[params.menu]]
+#name = "tags" 
+#url = "/tags"
+
+
 
 # Syntax highlight on code blocks
 [markup]

@@ -8,7 +8,17 @@ body {
     display: flex;
     justify-content: center;
     background-color: rgb(20, 20, 20);
-    color: white;
+    color: white; 
+}
+
+a {
+    color: #939394;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: white; 
+    cursor: pointer;
 }
 
 #settings {
@@ -34,10 +44,6 @@ body {
 
 #nav {
     margin-top: 30px;
-}
-
-#nav > a {
-    color: #939394;
 }
 
 input[ type="number" ], input[ type="text" ] {

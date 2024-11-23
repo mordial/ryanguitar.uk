@@ -17,8 +17,53 @@ let data = {
 
 window.onload = function() 
 {
+    checkUrlParams() 
     registerEventListeners() 
     gatherParameters() 
+}
+
+
+function checkUrlParams() 
+{
+    let urlParams = new URLSearchParams( window.location.search )
+
+    let inputs = {
+         frets: document.getElementById( 'frets-input' ),
+        tuning: document.getElementById( 'tuning-input' ),
+         scale: document.getElementById( 'scale-input'),
+    }
+
+    if( urlParams.get( 'tuning' ) ) 
+        //There is a native method for reversing an array, but not a string. This converts a string into 
+        //an array of characters, reverses that array and then joins it back into a string. Thanks Javascript. 
+        inputs.tuning.value = urlParams.get( 'tuning' ).toUpperCase().split( ',' ).reverse().join( ',' ) 
+    if( urlParams.get( 'scale' ) )  
+        inputs.scale.value = urlParams.get( 'scale' ) || '' 
+    if( urlParams.get( 'startFret' ) )
+        inputs.frets.value = urlParams.get( 'startFret' ) + '-' + urlParams.get( 'endFret' ) 
+
+    document.accidentalsForm.accidentals.value = urlParams.get( 'accidentals' ) 
+}
+
+function setUrlParams( data ) 
+{
+    let url = new URL( window.location.href )
+    let params = [ 'startFret', 'endFret', 'accidentals', 'tuning', 'scale' ]
+
+    for( let x of params ) {
+        if( data[ x ] !== '' ) { 
+            if( x === 'tuning' ) {
+                url.searchParams.set( x, data[ x ].join( ',' ) )
+            }
+            else { 
+                url.searchParams.set( x, data[ x ] )
+            }
+        } else {
+            url.searchParams.delete( x ) 
+        }
+    }
+
+    history.replaceState(null, 'Ryan\'s Guitar Tuition | Fretboard', url )
 }
 
 
@@ -35,7 +80,7 @@ function registerEventListeners()
         clicked( event, data, false  ) 
     }
 
-    document.getElementById( 'fretboard' ).addEventListener('contextmenu', 
+    document.getElementById( 'fretboard' ).addEventListener( 'contextmenu', 
         function( event ) 
         {
             event.preventDefault() 
@@ -56,8 +101,13 @@ export function gatherParameters( preset )
     let inputs = {
               frets: document.getElementById( 'frets-input' ),
              tuning: document.getElementById( 'tuning-input' ),
+              scale: document.getElementById( 'scale-input'),
         accidentals: document.querySelector( 'input[name="accidentals"]:checked' )
     }
+
+    if( inputs.scale.value ) preset = true 
+
+    data.scale = inputs.scale.value 
 
     data.tuning = inputs.tuning.value
         .replace( /\s/g, '' )
@@ -84,6 +134,8 @@ export function gatherParameters( preset )
     inputs.frets.value = data.startFret + '-' + data.endFret
 
     data.accidentals = inputs.accidentals.value 
+
+    setUrlParams( data ) 
 
     if( !checkAccidentals() ) { /* Invalid tuning */ }   
 
@@ -128,6 +180,7 @@ function checkAccidentals()
 function clearFretboard() 
 {
     for( let x of data.strings ) x.selected = [] 
+    document.getElementById( 'scale-input' ).value = ''
     gatherParameters( false ) 
 }
 

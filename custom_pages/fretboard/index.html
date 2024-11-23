@@ -2,10 +2,11 @@
 <html>
     <head>
         <link rel="stylesheet" href="./styles.css">
+        <title>Ryan's Guitar Tuition | Fretboard </title>
     </head>
     <body>
         <div id="nav">
-            <a href="/">< Back</a>
+            <a onclick="history.back()">< Back</a>
         </div>
         <div id="buttons">
             <button id="clear"> Clear Fretboard </button>
@@ -14,20 +15,22 @@
         <div id="settings">
             <div id="tuning">
                 <label for="tuning-input"> Tuning </label>
-                <input type="text" id="tuning-input" value="E, A, D, G, B, E" />
+                <input type="text" id="tuning-input" value="E,A,D,G,B,E" />
             </div>
             <div id="frets">
                 <label for="frets-input"> Fret range </label>
                 <input type="text" id="frets-input" value="0-24" />
             </div>
             <div id="accidentals">
-                <fieldset>
-                    <input name="accidentals" type="radio" value="sharps" checked="true">
-                    <label for="sharps"> Sharps </label>
-                    <br>
-                    <input name="accidentals" type="radio" value="flats">
-                    <label for="flats"> Flats </label>
-                </fieldset>
+                <form name="accidentalsForm">
+                    <fieldset>
+                        <input name="accidentals" type="radio" value="sharps" checked="true">
+                        <label for="sharps"> Sharps </label>
+                        <br>
+                        <input name="accidentals" type="radio" value="flats">
+                        <label for="flats"> Flats </label>
+                    </fieldset>
+                </form>
             </div>
             <div id="scale">
                 <label for="scale-input"> Load scale </label>

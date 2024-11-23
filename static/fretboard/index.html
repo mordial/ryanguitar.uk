@@ -9,7 +9,17 @@
     display: flex;
     justify-content: center;
     background-color: rgb(20, 20, 20);
-    color: white;
+    color: white; 
+}
+
+a {
+    color: #939394;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: white; 
+    cursor: pointer;
 }
 
 #settings {
@@ -35,10 +45,6 @@
 
 #nav {
     margin-top: 30px;
-}
-
-#nav > a {
-    color: #939394;
 }
 
 input[ type="number" ], input[ type="text" ] {
@@ -92,10 +98,11 @@ button {
 button:hover {
     background-color: #575757;
 }</style>
+        <title>Ryan's Guitar Tuition | Fretboard </title>
     </head>
     <body>
         <div id="nav">
-            <a href="/">< Back</a>
+            <a onclick="history.back()">< Back</a>
         </div>
         <div id="buttons">
             <button id="clear"> Clear Fretboard </button>
@@ -104,20 +111,22 @@ button:hover {
         <div id="settings">
             <div id="tuning">
                 <label for="tuning-input"> Tuning </label>
-                <input type="text" id="tuning-input" value="E, A, D, G, B, E" />
+                <input type="text" id="tuning-input" value="E,A,D,G,B,E" />
             </div>
             <div id="frets">
                 <label for="frets-input"> Fret range </label>
                 <input type="text" id="frets-input" value="0-24" />
             </div>
             <div id="accidentals">
-                <fieldset>
-                    <input name="accidentals" type="radio" value="sharps" checked="true">
-                    <label for="sharps"> Sharps </label>
-                    <br>
-                    <input name="accidentals" type="radio" value="flats">
-                    <label for="flats"> Flats </label>
-                </fieldset>
+                <form name="accidentalsForm">
+                    <fieldset>
+                        <input name="accidentals" type="radio" value="sharps" checked="true">
+                        <label for="sharps"> Sharps </label>
+                        <br>
+                        <input name="accidentals" type="radio" value="flats">
+                        <label for="flats"> Flats </label>
+                    </fieldset>
+                </form>
             </div>
             <div id="scale">
                 <label for="scale-input"> Load scale </label>
@@ -126,5 +135,5 @@ button:hover {
         </div>
         <canvas id="fretboard"></canvas>
     </body>
-    <script>(()=>{"use strict";var t,e,r={},n={};function i(t){var e=n[t];if(void 0!==e)return e.exports;var l=n[t]={exports:{}};return r[t](l,l.exports,i),l.exports}e=Object.getPrototypeOf?t=>Object.getPrototypeOf(t):t=>t.__proto__,i.t=function(r,n){if(1&n&&(r=this(r)),8&n)return r;if("object"==typeof r&&r){if(4&n&&r.__esModule)return r;if(16&n&&"function"==typeof r.then)return r}var l=Object.create(null);i.r(l);var o={};t=t||[null,e({}),e([]),e(e)];for(var s=2&n&&r;"object"==typeof s&&!~t.indexOf(s);s=e(s))Object.getOwnPropertyNames(s).forEach((t=>o[t]=()=>r[t]));return o.default=()=>r,i.d(l,o),l},i.d=(t,e)=>{for(var r in e)i.o(e,r)&&!i.o(t,r)&&Object.defineProperty(t,r,{enumerable:!0,get:e[r]})},i.o=(t,e)=>Object.prototype.hasOwnProperty.call(t,e),i.r=t=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},i.d({},{gatherParameters:()=>v,notes:()=>b});const l=JSON.parse('{"major":[2,2,1,2,2,2,1],"minor":[2,1,2,2,1,2,2],"ionian":[2,2,1,2,2,2,1],"dorian":[2,1,2,2,2,1,2],"phrygian":[1,2,2,2,1,2,2],"lydian":[2,2,2,1,2,2,1],"mixolydian":[2,2,1,2,2,1,2],"aeolian":[2,1,2,2,1,2,2],"locrian":[1,2,2,1,2,2,2],"harmonic minor":[2,1,2,2,1,3,1],"melodic minor":[2,1,2,2,2,2,1],"minor pentatonic":[3,2,2,3,2],"major pentatonic":[2,2,3,2,3],"blues":[3,2,1,1,3,2]}');var o=i.t(l,2);const s={noteBorder:"white",noteText:"white",grid:"#717171",rightClick:"#ff6347",leftClick:"#717171"};let c,a,d,f,g,u,h={},p={top:30,bottom:50,left:35,right:20};function m(t,e,r){let n=t.offsetX-p.left,i=t.offsetY-p.top+c/2;n<0&&(n=0),i<0&&(i=0),n=Math.floor(n/a)+e.startFret,i=Math.floor(i/c),i>u&&(i=u);let l=!1;for(let t in e.strings[i].selected){let o=e.strings[i].selected[t];o.fret===n&&(o.colour!==s.rightClick||r?o.colour===s.leftClick&&r?o.colour=s.rightClick:e.strings[i].selected.splice(t,1):o.colour=s.leftClick,l=!0)}l||e.strings[i].selected.push({fret:n,colour:r?s.rightClick:s.leftClick}),v()}let y=35;const b={sharps:["a","a#","b","c","c#","d","d#","e","f","f#","g","g#"],flats:["a","bb","b","c","db","d","eb","e","f","gb","g","ab"]};let F={startFret:void 0,endFret:void 0,accidentals:void 0,strings:[]};function v(t){let e={frets:document.getElementById("frets-input"),tuning:document.getElementById("tuning-input"),accidentals:document.querySelector('input[name="accidentals"]:checked')};F.tuning=e.tuning.value.replace(/\s/g,"").toLowerCase().split(",").reverse();let r=e.frets.value.replace(/\s/g,"").split("-");F.startFret=parseInt(r[0]),F.endFret=parseInt(r[1]),(isNaN(F.startFret)||isNaN(F.endFret))&&(F.startFret=0,F.endFret=24),F.startFret=F.startFret>=F.endFret?0:F.startFret,F.endFret=F.endFret>y?y:F.endFret,e.frets.value=F.startFret+"-"+F.endFret,F.accidentals=e.accidentals.value,function(){for(let t of F.tuning)if(!b[F.accidentals].includes(t))return!1}(),function(t){for(let t in F.tuning)F.strings[t]||(F.strings[t]={selected:[]}),F.strings[t].pitch=F.tuning[t];for(let t=Object.keys(F.strings).length;t>=0;t--)if(t>=F.tuning.length)F.strings.splice(t,1);else for(let e in F.strings[t].selected)(F.strings[t].selected[e].fret>F.endFret||F.strings[t].selected[e].fret<F.startFret)&&F.strings[t].selected.splice(e,1);t&&function(t){let e,r,n=document.getElementById("scale-input").value;if(n){try{let t=n.split(" ");t=t.map((t=>t.toLowerCase().replace(/\s/g,""))),t=t.filter((t=>""!=t.trim())),e=t[0],t.splice(0,1),r=t.join(" ")}catch(t){return void console.log(t)}b[t.accidentals].includes(e)?Object.keys(o).includes(r)?function(t,e,r){let n=b[t.accidentals].indexOf(e),i=[];for(let e of r)i.push(b[t.accidentals][n%12]),n+=e;for(let e of t.strings)e.selected=[];for(let r in t.strings){n=b[t.accidentals].indexOf(t.strings[r].pitch);for(let l=t.startFret;l<=t.endFret;l++){let o=b[t.accidentals][(l+n)%12];i.includes(o)&&t.strings[r].selected.push({fret:l,colour:o===e?s.rightClick:s.leftClick})}}}(t,e,o[r]):alert("Scale not found"):alert("Incorrect accidentals entered")}}(F),function(t){!function(t){d=document.getElementById("fretboard"),f=d.getContext("2d"),g=t.endFret-t.startFret+1,u=t.strings.length-1,d.style.height=8*t.strings.length+"%",d.style.width=g<=20?80*g+"px":"95%";let e=d.getBoundingClientRect();d.height=Math.floor(e.height),d.width=Math.floor(e.width),h={height:d.height-p.top-p.bottom,width:d.width-p.left-p.right},c=h.height/u,a=h.width/g}(t),f.clearRect(0,0,d.width,d.height),f.beginPath(),f.lineWidth=2,f.strokeStyle=s.grid,f.rect(p.left,p.top,h.width,h.height);for(let e=0;e<u+1;e++)f.strokeStyle=s.grid,f.moveTo(p.left,p.top+e*c),f.lineTo(p.left+h.width,p.top+e*c),f.fillStyle=s.leftClick,f.font="17px literata",f.textAlign="center",f.fillText(t.strings[e].pitch.toUpperCase(),10,p.top+e*c+6);for(let e=0;e<g;e++)f.fillStyle=s.grid,f.moveTo(p.left+e*a,p.top),f.lineTo(p.left+e*a,p.top+h.height),f.fillStyle=s.leftClick,f.font="17px literata",f.textAlign="center",f.fillText(e+t.startFret,p.left+e*a+a/2,p.top+h.height+40);f.stroke();for(let e in t.strings)for(let r in t.strings[e].selected){let n=t.strings[e].selected[r];f.beginPath();let i=.7*a/2;i>20&&(i=20),f.strokeStyle=s.noteBorder,f.lineWidth=1,f.arc(p.left+(n.fret-t.startFret)*a+a/2,p.top+e*c,i,0,2*Math.PI),f.fillStyle=n.colour,f.fill(),f.stroke(),f.beginPath(),f.fillStyle=s.noteText,f.font=a/5+"px literata",f.textAlign="center";let l=b[t.accidentals].indexOf(t.strings[e].pitch),o=b[t.accidentals][(l+n.fret)%12];o=o.charAt(0).toUpperCase()+o.slice(1),f.fillText(o,p.left+(n.fret-t.startFret)*a+a/2,p.top+e*c+a/13),f.stroke()}}(F)}(t)}function k(){for(let t of F.strings)t.selected=[];v(!1)}function x(){let t=document.createElement("a");t.download="fretboard.png",t.href=document.getElementById("fretboard").toDataURL(),t.click()}window.onload=function(){[...document.getElementsByTagName("input")].forEach((t=>{t.onchange=v})),document.getElementById("fretboard").onclick=function(t){m(t,F,!1)},document.getElementById("fretboard").addEventListener("contextmenu",(function(t){t.preventDefault(),m(t,F,!0)}),!1),window.addEventListener("resize",v),document.getElementById("clear").onclick=k,document.getElementById("download").onclick=x,v()}})();</script>
+    <script>(()=>{"use strict";var t,e,n={},r={};function l(t){var e=r[t];if(void 0!==e)return e.exports;var i=r[t]={exports:{}};return n[t](i,i.exports,l),i.exports}e=Object.getPrototypeOf?t=>Object.getPrototypeOf(t):t=>t.__proto__,l.t=function(n,r){if(1&r&&(n=this(n)),8&r)return n;if("object"==typeof n&&n){if(4&r&&n.__esModule)return n;if(16&r&&"function"==typeof n.then)return n}var i=Object.create(null);l.r(i);var o={};t=t||[null,e({}),e([]),e(e)];for(var s=2&r&&n;"object"==typeof s&&!~t.indexOf(s);s=e(s))Object.getOwnPropertyNames(s).forEach((t=>o[t]=()=>n[t]));return o.default=()=>n,l.d(i,o),i},l.d=(t,e)=>{for(var n in e)l.o(e,n)&&!l.o(t,n)&&Object.defineProperty(t,n,{enumerable:!0,get:e[n]})},l.o=(t,e)=>Object.prototype.hasOwnProperty.call(t,e),l.r=t=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},l.d({},{gatherParameters:()=>F,notes:()=>b});const i=JSON.parse('{"major":[2,2,1,2,2,2,1],"minor":[2,1,2,2,1,2,2],"ionian":[2,2,1,2,2,2,1],"dorian":[2,1,2,2,2,1,2],"phrygian":[1,2,2,2,1,2,2],"lydian":[2,2,2,1,2,2,1],"mixolydian":[2,2,1,2,2,1,2],"aeolian":[2,1,2,2,1,2,2],"locrian":[1,2,2,1,2,2,2],"harmonic minor":[2,1,2,2,1,3,1],"melodic minor":[2,1,2,2,2,2,1],"minor pentatonic":[3,2,2,3,2],"major pentatonic":[2,2,3,2,3],"blues":[3,2,1,1,3,2]}');var o=l.t(i,2);const s={noteBorder:"white",noteText:"white",grid:"#717171",rightClick:"#ff6347",leftClick:"#717171"};let c,a,d,f,g,u,h={},p={top:30,bottom:50,left:35,right:20};function m(t,e,n){let r=t.offsetX-p.left,l=t.offsetY-p.top+c/2;r<0&&(r=0),l<0&&(l=0),r=Math.floor(r/a)+e.startFret,l=Math.floor(l/c),l>u&&(l=u);let i=!1;for(let t in e.strings[l].selected){let o=e.strings[l].selected[t];o.fret===r&&(o.colour!==s.rightClick||n?o.colour===s.leftClick&&n?o.colour=s.rightClick:e.strings[l].selected.splice(t,1):o.colour=s.leftClick,i=!0)}i||e.strings[l].selected.push({fret:r,colour:n?s.rightClick:s.leftClick}),F()}let y=35;const b={sharps:["a","a#","b","c","c#","d","d#","e","f","f#","g","g#"],flats:["a","bb","b","c","db","d","eb","e","f","gb","g","ab"]};let v={startFret:void 0,endFret:void 0,accidentals:void 0,strings:[]};function F(t){let e={frets:document.getElementById("frets-input"),tuning:document.getElementById("tuning-input"),scale:document.getElementById("scale-input"),accidentals:document.querySelector('input[name="accidentals"]:checked')};e.scale.value&&(t=!0),v.scale=e.scale.value,v.tuning=e.tuning.value.replace(/\s/g,"").toLowerCase().split(",").reverse();let n=e.frets.value.replace(/\s/g,"").split("-");v.startFret=parseInt(n[0]),v.endFret=parseInt(n[1]),(isNaN(v.startFret)||isNaN(v.endFret))&&(v.startFret=0,v.endFret=24),v.startFret=v.startFret>=v.endFret?0:v.startFret,v.endFret=v.endFret>y?y:v.endFret,e.frets.value=v.startFret+"-"+v.endFret,v.accidentals=e.accidentals.value,function(t){let e=new URL(window.location.href),n=["startFret","endFret","accidentals","tuning","scale"];for(let r of n)""!==t[r]?"tuning"===r?e.searchParams.set(r,t[r].join(",")):e.searchParams.set(r,t[r]):e.searchParams.delete(r);history.replaceState(null,"Ryan's Guitar Tuition | Fretboard",e)}(v),function(){for(let t of v.tuning)if(!b[v.accidentals].includes(t))return!1}(),function(t){for(let t in v.tuning)v.strings[t]||(v.strings[t]={selected:[]}),v.strings[t].pitch=v.tuning[t];for(let t=Object.keys(v.strings).length;t>=0;t--)if(t>=v.tuning.length)v.strings.splice(t,1);else for(let e in v.strings[t].selected)(v.strings[t].selected[e].fret>v.endFret||v.strings[t].selected[e].fret<v.startFret)&&v.strings[t].selected.splice(e,1);t&&function(t){let e,n,r=document.getElementById("scale-input").value;if(r){try{let t=r.split(" ");t=t.map((t=>t.toLowerCase().replace(/\s/g,""))),t=t.filter((t=>""!=t.trim())),e=t[0],t.splice(0,1),n=t.join(" ")}catch(t){return void console.log(t)}b[t.accidentals].includes(e)?Object.keys(o).includes(n)?function(t,e,n){let r=b[t.accidentals].indexOf(e),l=[];for(let e of n)l.push(b[t.accidentals][r%12]),r+=e;for(let e of t.strings)e.selected=[];for(let n in t.strings){r=b[t.accidentals].indexOf(t.strings[n].pitch);for(let i=t.startFret;i<=t.endFret;i++){let o=b[t.accidentals][(i+r)%12];l.includes(o)&&t.strings[n].selected.push({fret:i,colour:o===e?s.rightClick:s.leftClick})}}}(t,e,o[n]):alert("Scale not found"):alert("Incorrect accidentals entered")}}(v),function(t){!function(t){d=document.getElementById("fretboard"),f=d.getContext("2d"),g=t.endFret-t.startFret+1,u=t.strings.length-1,d.style.height=8*t.strings.length+"%",d.style.width=g<=20?80*g+"px":"95%";let e=d.getBoundingClientRect();d.height=Math.floor(e.height),d.width=Math.floor(e.width),h={height:d.height-p.top-p.bottom,width:d.width-p.left-p.right},c=h.height/u,a=h.width/g}(t),f.clearRect(0,0,d.width,d.height),f.beginPath(),f.lineWidth=2,f.strokeStyle=s.grid,f.rect(p.left,p.top,h.width,h.height);for(let e=0;e<u+1;e++)f.strokeStyle=s.grid,f.moveTo(p.left,p.top+e*c),f.lineTo(p.left+h.width,p.top+e*c),f.fillStyle=s.leftClick,f.font="17px literata",f.textAlign="center",f.fillText(t.strings[e].pitch.toUpperCase(),10,p.top+e*c+6);for(let e=0;e<g;e++)f.fillStyle=s.grid,f.moveTo(p.left+e*a,p.top),f.lineTo(p.left+e*a,p.top+h.height),f.fillStyle=s.leftClick,f.font="17px literata",f.textAlign="center",f.fillText(e+t.startFret,p.left+e*a+a/2,p.top+h.height+40);f.stroke();for(let e in t.strings)for(let n in t.strings[e].selected){let r=t.strings[e].selected[n];f.beginPath();let l=.7*a/2;l>20&&(l=20),f.strokeStyle=s.noteBorder,f.lineWidth=1,f.arc(p.left+(r.fret-t.startFret)*a+a/2,p.top+e*c,l,0,2*Math.PI),f.fillStyle=r.colour,f.fill(),f.stroke(),f.beginPath(),f.fillStyle=s.noteText,f.font=a/5+"px literata",f.textAlign="center";let i=b[t.accidentals].indexOf(t.strings[e].pitch),o=b[t.accidentals][(i+r.fret)%12];o=o.charAt(0).toUpperCase()+o.slice(1),f.fillText(o,p.left+(r.fret-t.startFret)*a+a/2,p.top+e*c+a/13),f.stroke()}}(v)}(t)}function w(){for(let t of v.strings)t.selected=[];document.getElementById("scale-input").value="",F(!1)}function k(){let t=document.createElement("a");t.download="fretboard.png",t.href=document.getElementById("fretboard").toDataURL(),t.click()}window.onload=function(){!function(){let t=new URLSearchParams(window.location.search),e={frets:document.getElementById("frets-input"),tuning:document.getElementById("tuning-input"),scale:document.getElementById("scale-input")};t.get("tuning")&&(e.tuning.value=t.get("tuning").toUpperCase().split(",").reverse().join(",")),t.get("scale")&&(e.scale.value=t.get("scale")||""),t.get("startFret")&&(e.frets.value=t.get("startFret")+"-"+t.get("endFret")),document.accidentalsForm.accidentals.value=t.get("accidentals")}(),[...document.getElementsByTagName("input")].forEach((t=>{t.onchange=F})),document.getElementById("fretboard").onclick=function(t){m(t,v,!1)},document.getElementById("fretboard").addEventListener("contextmenu",(function(t){t.preventDefault(),m(t,v,!0)}),!1),window.addEventListener("resize",F),document.getElementById("clear").onclick=w,document.getElementById("download").onclick=k,F()}})();</script>
 </html>

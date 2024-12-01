@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
+
+body {
+    font-family: 'literata';
+    overflow: hidden;
+    margin: 0;
+    background-color: rgb(20, 20, 20);
+    color: white; 
+}
+
+#container {
+    margin: 0 auto; 
+    width: 30%;
+    display: flex;
+    margin-top: 25vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#container > * {
+    margin: 10px;
+}
+
+#question {
+    text-align: center;
+    font-size: 25px; 
+    width: 70vw; 
+}
+
+input {
+    font-family: 'literata';
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+
+button {
+    font-family: 'literata';
+    width: 170px;
+    height: 40px;
+    margin: 10px;
+    border: none; 
+    border-radius: 3px;
+    background-color: #ffffff1e;
+    box-shadow: rgba(0, 0, 0, 0.075) 0px 0px 0px 1px;
+    color: #7a7a7a;
+}
+
+button:hover {
+    color: white;
+    background-color: #444444;
+}
+
+a {
+    color: #939394;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: white; 
+    cursor: pointer;
+}
+
+#keysig {
+    color: #939394;
+    font-size: 22px;
+}
+
+#streak {
+    color: #939394;
+    font-size: 16px;
+}
+
+#details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#incorrect {
+    color: #570017
+}
+
+#record {
+    color: #939394;
+    font-size: 16px;
+}

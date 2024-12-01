@@ -5,9 +5,6 @@ theme = 'typo'
 [taxonomies]
 tag = 'tags'
 
-# Google analytics code
-googleAnalytics = "G-xxxxxxxxx"
-
 [params]
 # Meta description
 description = "Ryan's Guitar Tuition"
@@ -68,9 +65,13 @@ url = "/fretboard"
 #name = "tags" 
 #url = "/tags"
 
-
-
 # Syntax highlight on code blocks
 [markup]
 [markup.highlight]
 style = 'algol'
+
+[sitemap]
+changeFreq = ''
+disable = false
+filename = 'sitemap.xml'
+priority = -1

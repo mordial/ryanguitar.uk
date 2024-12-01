@@ -19,7 +19,6 @@ window.onload = function()
 {
     checkUrlParams() 
     registerEventListeners() 
-    gatherParameters() 
 }
 
 
@@ -27,23 +26,29 @@ function checkUrlParams()
 {
     let urlParams = new URLSearchParams( window.location.search )
 
-    let inputs = {
-         frets: document.getElementById( 'frets-input' ),
-        tuning: document.getElementById( 'tuning-input' ),
-         scale: document.getElementById( 'scale-input'),
-    }
-
     if( urlParams.get( 'tuning' ) ) 
-        //There is a native method for reversing an array, but not a string. This converts a string into 
-        //an array of characters, reverses that array and then joins it back into a string. Thanks Javascript. 
-        inputs.tuning.value = urlParams.get( 'tuning' ).toUpperCase().split( ',' ).reverse().join( ',' ) 
-    if( urlParams.get( 'scale' ) )  
-        inputs.scale.value = urlParams.get( 'scale' ) || '' 
+        document.getElementById( 'tuning-input' ).value = urlParams.get( 'tuning' )
+            .toUpperCase()
+            .split( ',' )
+            .reverse()
+            .join( ',' ) 
+        
     if( urlParams.get( 'startFret' ) )
-        inputs.frets.value = urlParams.get( 'startFret' ) + '-' + urlParams.get( 'endFret' ) 
+        document.getElementById( 'frets-input' ).value = 
+            urlParams.get( 'startFret' ) + '-' + urlParams.get( 'endFret' ) 
 
     document.accidentalsForm.accidentals.value = urlParams.get( 'accidentals' ) 
+
+    if( urlParams.get( 'scale' ) )  {
+        document.getElementById( 'scale-input').value = urlParams.get( 'scale' ) || '' 
+        gatherParameters( true )
+    } else {
+        gatherParameters( false ) 
+    }
+
 }
+
+
 
 function setUrlParams( data ) 
 {
@@ -63,8 +68,9 @@ function setUrlParams( data )
         }
     }
 
-    history.replaceState(null, 'Ryan\'s Guitar Tuition | Fretboard', url )
+    history.replaceState(null, document.title, url )
 }
+
 
 
 function registerEventListeners() 
@@ -77,7 +83,7 @@ function registerEventListeners()
 
     document.getElementById( 'fretboard' ).onclick = function( event ) 
     { 
-        clicked( event, data, false  ) 
+        clicked( event, data, false ) 
     }
 
     document.getElementById( 'fretboard' ).addEventListener( 'contextmenu', 
@@ -104,8 +110,6 @@ export function gatherParameters( preset )
               scale: document.getElementById( 'scale-input'),
         accidentals: document.querySelector( 'input[name="accidentals"]:checked' )
     }
-
-    if( inputs.scale.value ) preset = true 
 
     data.scale = inputs.scale.value 
 

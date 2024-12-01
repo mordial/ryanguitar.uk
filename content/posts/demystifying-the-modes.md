@@ -1,73 +1,53 @@
 ---
 title: 'Demystifying the Modes'
-summary: "Playing modally is less complicated than you think"  
+summary: "My approach to memorizing the modes"  
 date: 2024-11-18T00:00:00Z
 draft: false
+readTime: true 
 ---
 
 >"You've got to learn your instrument. Then, you practice, practice, practice. And then, when you 
->finally get up there on the bandstand, forget all that and just wail." - Charlie Parker 
+>finally get up there on the bandstand, forget all that and just wail." - Charlie Parker
 
-You need to learn scales across the entire fretboard before you can articulate any ideas you may have.
-It's true that there are no right answers when it comes to music, but you must first learn how to play 
-'inside' if you want to play 'outside' successfully.
+When learning how to play modally, I devised a system to dramatically reduce the amount of things I had to memorize. To improvise 
+successfully, you must first learn where every note in the current key falls on your fretboard. This can be done with 3 shapes. 
 
-Before you attempt to play modally, you must know the major scale across the entire fretboard. This can 
-be done by memorizing three shapes. 
+[![F major](/img/demystifying-the-modes/f-major.png)](/fretboard/?scale=f+major)
 
-![F major](/img/demystifying-the-modes/f-major.png)
+The diagram above shows a fretboard with every note in the key of F major highlighted. The three shapes you want to learn are between 
+frets [**1 and 5**](/fretboard/?startFret=1&endFret=5&scale=f+major), 
+frets [**6 and 10**](/fretboard/?startFret=6&endFret=10&scale=f+major), and 
+frets [**10 and 14**](/fretboard/?startFret=10&endFret=14&scale=f+major). 
+Pay attention to whether or not one shape connects to the next. The shapes move with eachother depending on the key.
 
-This diagram shows a fretboard with every note in the key of F major highlighted. The three shapes you 
-want to learn are between 
-frets [1 and 5](/fretboard/?startFret=1&endFret=5&scale=f+major), 
-frets [6 and 10](/fretboard/?startFret=6&endFret=10&scale=f+major), and 
-frets [10 and 14](/fretboard/?startFret=10&endFret=14&scale=f+major). 
-Notice that the first shape is _not_ connected to the second shape, but the second shape _is_ connected to 
-the third. After the 12th fret, the pattern repeats. If the shapes are played from top to bottom, you will 
-run into certain spots where you end up playing the same note twice. This is fine, as we want to know where 
-every available note is.
+### Applying the shapes modally
+So, how does knowing how to play the major scale help with playing modally? Essentially, every major scale is also 6 other modal scales. 
+All you need to do is change which note you consider to be the tonic. If you take shape one from the diagram above and start it from the 2nd 
+note, you'll be playing `G` dorian. The third note, and you're playing `A` phrygian. These are called 'relative' scales. They contain the same 
+notes, just in different orders.
 
-This approach to memorizing the major scale is essentially identical to how people generally learn 
-every position of the minor pentatonic scale. The only difference is that in this case, you learn 3 
-shapes rather than 5. 
+![](/img/demystifying-the-modes/mode-relationships.png)
 
-Once you've memorized these shapes, you need to wrap your head around the relationship between the major 
-scale and its modes. 
+>This diagram shows the interval sequence for each of the modes. As you can see, they are essentially the same sequence starting from 
+>different points. 
 
-## What are the modes?
+It's possible to essentially reverse engineer any modal scale and find out which major scale it relates to. Because you now know how to play the 
+major scale across the entire fretboard, you can also play any modal scale. `"I don't particularly like modes a lot"` is a mnemonic that helps with 
+correctly remembering the order of the modes.
 
-> "**I don't particularly like modes a lot**" - A useful mnemonic device for memorizing the order of the modes.
+### Figuring out the relative major
+You will need to be able to find any note on both the `E` and `A` strings. Use my [**fretboard visualizer**](/fretboard) to help with this. 
+`"Eggs and Bacon"` is a helpful mnemonic for remembering which notes don't have sharps.
 
-There are seven modes of the major scale, one for each of its notes. These modes are:
-1. Ionian 
-2. Dorian
-3. Phrygian
-4. Lydian
-5. Mixolydian
-6. Aeolian 
-7. Locrian
+The first shape mentioned above will help you find the relative major. For example, say we're looking for the relative major of `D` mixolydian. 
+Mixolydian is the fifth mode, and the fifth note of that first shape lands on the `A` string. We need to find the note `D` on the `A` string, and 
+position that first shape such that `D` ends up being the fifth note we play. `D` is on the fifth fret of the `A` string, which is the fifth note
+played when that shape starts on the third fret of the `E` string. That note is `G`, so the relative major is `G`. 
 
-Remembering them in this specific order is critically important. Ionian is the unchanged major scale, which 
-you should now know how to play all across the fretboard. The other modes are all just slight modifications 
-to the major scale. Conveniently, it's entirely possible to play modally without even knowing which notes 
-have been modified. 
+You can see this if you look at [**G major**](/fretboard/?scale=g+major&startFret=3&endFret=7) 
+and [**D mixolydian**](/fretboard/?scale=d+mixolydian&startFret=3&endFret=7) on the visualizer. The only difference is which note is considered 
+to be the root. 
 
-### The standard learning process
-Typically, people will be taught which notes have been modified for each mode. Lydian will be thought of as 
-a major scale with a sharpened 4th. The `F` in [C major](/fretboard/?scale=c+major) becomes an `F#` in 
-[C lydian](/fretboard/?scale=c+lydian). This seems simple enough, until you start trying to apply this rule
-across the entire fretboard every time you come across that modified tone.
-
-You will eventually have to learn 7 totally different fretboards, or at least 7 alternate versions of the 
-shapes you used to memorize the major scale. This is unreasonable and unnecessary. You need only understand 
-where the modes come from to know why. 
-
-### My approach
-The modes should be remembered in a particular order for a very good reason. Take the scale `G` major for 
-example. It's notes are `G A B C D E F#`. There are 6 other scales, each of a different mode, that share the 
-exact same notes as G major. These are known as "relative" scales. 
-
-The second note in `G` major is `A`, and the 2nd mode is dorian. `A` dorian shares all of `G` major's notes. 
-The third note is `B`, the third mode is phrygian, and the same idea applies. Follow that same principal, and 
-try entering each scale into my [visualizer](/fretboard) to see exactly what I mean. You'll notice that none 
-of the notes on the fretboard actually move, only which note is highlighted as the root. 
+### Practice utility
+I've thrown together a [**minigame**](/relative-scales) you can play to test yourself. I suggest doing this with a guitar in your hands first, 
+and then eventually without one. Don't expect to understand this concept immediately, instead take your time getting familiar with it and practice.

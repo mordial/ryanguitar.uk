@@ -1,0 +1,110 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+        <style>@import url(https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap);body {
+    font-family: 'literata';
+    overflow: hidden;
+    margin: 0;
+    background-color: rgb(20, 20, 20);
+    color: white; 
+}
+
+#container {
+    margin: 0 auto; 
+    width: 30%;
+    display: flex;
+    margin-top: 25vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#container > * {
+    margin: 10px;
+}
+
+#question {
+    text-align: center;
+    font-size: 25px; 
+    width: 70vw; 
+}
+
+input {
+    font-family: 'literata';
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+
+button {
+    font-family: 'literata';
+    width: 170px;
+    height: 40px;
+    margin: 10px;
+    border: none; 
+    border-radius: 3px;
+    background-color: #ffffff1e;
+    box-shadow: rgba(0, 0, 0, 0.075) 0px 0px 0px 1px;
+    color: #7a7a7a;
+}
+
+button:hover {
+    color: white;
+    background-color: #444444;
+}
+
+a {
+    color: #939394;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: white; 
+    cursor: pointer;
+}
+
+#keysig {
+    color: #939394;
+    font-size: 22px;
+}
+
+#streak {
+    color: #939394;
+    font-size: 16px;
+}
+
+#details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#incorrect {
+    color: #570017
+}
+
+#record {
+    color: #939394;
+    font-size: 16px;
+}</style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="nav">
+                <a onclick="history.back()">< Back</a>
+            </div>
+            <div id="record"></div>
+            <div id="question"> ... </div>
+            <input id="input" placeholder="..." />
+            <button id="submit">Submit</button>
+            <div id="details">
+                <div id="result"></div>
+                <div id="streak"></div>
+            </div>
+        </div>
+    </body>
+    <script>(()=>{"use strict";const e=JSON.parse('{"major":[2,2,1,2,2,2,1]}');let t,n="relative-scale-streak",a=["f#","c#"],r=["major","dorian","phrygian","lydian","mixolydian","minor","locrian"],o={sharps:["a","a#","b","c","c#","d","d#","e","f","f#","g","g#"],flats:["a","bb","b","c","db","d","eb","e","f","gb","g","ab"]},s=0;function l(){let n=o.sharps[Math.floor(Math.random()*o.sharps.length)],s=e.major,l=[],d=o.sharps.indexOf(n),i="#";for(let e of s)l.push(o.sharps[d%o.sharps.length]),d+=e;if(a.includes(n))switch(n){case"f#":l=["f#","g#","a#","b","c#","d#","e#"];break;case"c#":l=["c#","d#","e#","f#","g#","a#","b#"]}else for(let e of l)if(1===e.length)for(let t of l)2===t.length&&t.startsWith(e)&&(l=l.map((e=>o.flats[o.sharps.indexOf(e)])),n=l[0],i="♭");let c=Math.floor(Math.random()*r.length),m=c;for(;m===c;)m=Math.floor(Math.random()*r.length);let g=l[c];g.endsWith("b")&&(g=g.substring(0,1)+"♭"),document.getElementById("question").innerHTML=`What is the relative \n            ${r[m]} of \n            ${g.toUpperCase()} \n            ${r[c]}? \n            <span id="keysig"> ${i} </span>`,t=l[m]}function d(){let e=localStorage.getItem(n),a=document.getElementById("input").value.toLowerCase(),r=document.getElementById("result"),o="";a=a.replace("♭","b"),t===a||"b#"===t&&"c"===a||"e#"===t&&"f"===a?(s+=1,s>e&&(localStorage.setItem(n,s),document.getElementById("record").innerText="Best streak: "+s),r.innerText="✔️"):(s=0,r.innerText="❌",o='<span id="incorrect"> The answer was '+t.toUpperCase()+"</span>"),document.getElementById("input").value="",s>=2&&(o=s+" in a row",s>=5&&(o+=" 🔥")),document.getElementById("streak").innerHTML=o,l()}window.onload=function(){localStorage.getItem(n)||localStorage.setItem(n,0),document.getElementById("record").innerText="Best streak: "+localStorage.getItem(n),document.getElementById("submit").onclick=d,document.getElementById("input").addEventListener("keypress",(e=>{"Enter"===e.key&&d()})),l()}})();</script>
+</html>

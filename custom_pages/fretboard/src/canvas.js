@@ -158,7 +158,7 @@ export function clicked( event, data, rightClick )
             colour: rightClick ? colours.rightClick : colours.leftClick 
         })
     }
-    gatherParameters()
+    gatherParameters() 
 }
 
 

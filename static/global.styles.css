@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap);:root {
+    --font: 'literata';
+
+    --darkest: rgb(20, 20, 20);
+    
+    --text-light: white;
+    --text-darker: #939394;
+
+    --button-bg: #ffffff1e; 
+    --button-shadow: rgba(0, 0, 0, 0.075) 0px 0px 0px 1px;
+    --button-hover: #575757; 
+    --button-text-colour: #7a7a7a;
+
+    font-family: var(--font);
+}
+
+body {
+    background-color: var(--darkest);
+    overflow: hidden; 
+    margin: 0; 
+}

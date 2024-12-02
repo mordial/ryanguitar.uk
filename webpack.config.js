@@ -13,9 +13,10 @@ module.exports = {
     plugins: [
         new HtmlBundlerPlugin({
             entry: { 
-                  'fretboard/index': './custom_pages/fretboard/index.html', 
-                     'chords/index': './custom_pages/chords/index.html',
-            'relative-scales/index': './custom_pages/relative-scales/index.html'
+                   'fretboard/index': './custom_pages/fretboard/index.html', 
+                      'chords/index': './custom_pages/chords/index.html',
+                  'scale-game/index': './custom_pages/scale-game/index.html',
+                'scale-lookup/index': './custom_pages/scale-lookup/index.html'
             },
             js:  { inline: true },
             css: { inline: true }

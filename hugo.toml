@@ -1,5 +1,5 @@
 languageCode = 'en-us'
-title = "Ryan's Guitar Tuition"
+title = "Ryan's Guitar Tuition 🎸"
 theme = 'typo'
 
 [taxonomies]
@@ -7,14 +7,15 @@ tag = 'tags'
 
 [params]
 # Meta description
-description = "Ryan's Guitar Tuition"
+description = "Ryan's Guitar Tuition 🎸"
 
 # Appearance settings
-theme = 'auto'
+theme = 'dark'
 colorPalette = 'default'
 hideHeader = false
 
-showFooter = false 
+showFooter = true 
+footerContent = 'ryanguitar.uk 🎸'
 
 # Intro on main page, content is markdown
 homeIntroTitle = 'Welcome'

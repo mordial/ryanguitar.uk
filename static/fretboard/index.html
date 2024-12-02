@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>@import url(https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap);body {
-    font-family: 'literata';
-    overflow: hidden;
-    margin: 0;
+        <style>@import url(https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap);:root {
+    --font: 'literata';
+
+    --darkest: rgb(20, 20, 20);
+    
+    --text-light: white;
+    --text-darker: #939394;
+
+    --button-bg: #ffffff1e; 
+    --button-shadow: rgba(0, 0, 0, 0.075) 0px 0px 0px 1px;
+    --button-hover: #575757; 
+    --button-text-colour: #7a7a7a;
+
+    background-color: var(--darkest);
+    font-family: var(--font);
+}
+
+body {
+    overflow: hidden; 
+    margin: 0; 
+    color: var(--text-light)
+}</style>
+        <style>
+body {
     min-width: 700px;
     display: flex;
     justify-content: center;
-    background-color: rgb(20, 20, 20);
-    color: white; 
 }
 
-a {
-    color: #939394;
-    text-decoration: underline;
-}
+#nav { margin-top: 30px; }
 
-a:hover {
-    color: white; 
-    cursor: pointer;
-}
+input        { color: var(--text-light); }
+a            { color: var(--text-darker); text-decoration: underline; }
+a:hover      { color: var(--text-light); cursor: pointer; }
+fieldset     { border: none; font-size: 15px; }
+button:hover { background-color: var(--button-hover) }
 
 #settings {
     position: absolute; 
@@ -43,21 +59,13 @@ a:hover {
     justify-content: center;
 }
 
-#nav {
-    margin-top: 30px;
-}
-
 input[ type="number" ], input[ type="text" ] {
-    font-family: 'literata';
+    font-family: var(--font);
     background-color: transparent;
     border: none;
     font-size: 18px;
     text-align: center;
-    color: #939394;
-}
-
-input {
-    color: white;
+    color: var(--text-darker);
 }
 
 #fretboard {
@@ -66,11 +74,6 @@ input {
     max-width: 1920px;
     top: 30%; 
     max-height: 400px;
-}
-
-fieldset {
-    border: none; 
-    font-size: 15px; 
 }
 
 #buttons {
@@ -84,20 +87,18 @@ fieldset {
 }
 
 button {
-    font-family: 'literata';
+    font-family: var(--font);
     width: 170px;
     height: 40px;
     margin: 10px;
     border: none; 
     border-radius: 3px;
-    background-color: #ffffff1e;
-    box-shadow: rgba(0, 0, 0, 0.075) 0px 0px 0px 1px;
-    color: white;
+    background-color: var(--button-bg);
+    box-shadow: var(--button-shadow);
+    color: var(--text-light);
 }
 
-button:hover {
-    background-color: #575757;
-}</style>
+</style>
         <title>Ryan's Guitar Tuition | Fretboard </title>
     </head>
     <body>

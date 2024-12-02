@@ -26,7 +26,7 @@ All you need to do is change which note you consider to be the tonic. If you tak
 note, you'll be playing `G` dorian. The third note, and you're playing `A` phrygian. These are called 'relative' scales. They contain the same 
 notes, just in different orders.
 
-![](/img/demystifying-the-modes/mode-relationships.png)
+![Mode relationships](/img/demystifying-the-modes/mode-relationships.png)
 
 >This diagram shows the interval sequence for each of the modes. As you can see, they are essentially the same sequence starting from 
 >different points. 
@@ -37,7 +37,7 @@ correctly remembering the order of the modes.
 
 ### Figuring out the relative major
 You will need to be able to find any note on both the `E` and `A` strings. Use my [**fretboard visualizer**](/fretboard) to help with this. 
-`"Eggs and Bacon"` is a helpful mnemonic for remembering which notes don't have sharps.
+`"Eggs & Bacon"` is a helpful mnemonic for remembering which notes don't have sharps.
 
 The first shape mentioned above will help you find the relative major. For example, say we're looking for the relative major of `D` mixolydian. 
 Mixolydian is the fifth mode, and the fifth note of that first shape lands on the `A` string. We need to find the note `D` on the `A` string, and 

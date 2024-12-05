@@ -23,7 +23,7 @@ let notes = {
 }
 
 let answer
-let streak = 20
+let streak = 0
 
 window.onload = function() 
 {

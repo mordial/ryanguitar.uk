@@ -37,17 +37,20 @@ correctly remembering the order of the modes.
 
 ### Figuring out the relative major
 You will need to be able to find any note on both the `E` and `A` strings. Use my [**fretboard visualizer**](/fretboard) to help with this. 
-`"Eggs & Bacon"` is a helpful mnemonic for remembering which notes don't have sharps.
+`"Eggs & Bacon"` is a helpful mnemonic for remembering which notes don't have sharps (`E` and `B`).
 
-The first shape mentioned above will help you find the relative major. For example, say we're looking for the relative major of `D` mixolydian. 
-Mixolydian is the fifth mode, and the fifth note of that first shape lands on the `A` string. We need to find the note `D` on the `A` string, and 
-position that first shape such that `D` ends up being the fifth note we play. `D` is on the fifth fret of the `A` string, which is the fifth note
-played when that shape starts on the third fret of the `E` string. That note is `G`, so the relative major is `G`. 
+Within the first shape, take note of which string each note ends up on. For example, the 4th note is on the `A` string. The 7th is on the 
+`D` string, etc. Let's walk through some examples of 'reverse-engineering' this shape. 
 
-You can see this if you look at [**G major**](/fretboard/?scale=g+major&startFret=3&endFret=7) 
-and [**D mixolydian**](/fretboard/?scale=d+mixolydian&startFret=3&endFret=7) on the visualizer. The only difference is which note is considered 
-to be the root. 
+We want to find the relative Lydian of `C#` Mixolydian. Our steps would be: 
+1) Mixolydian is the 5th mode. The 5th note in our first shape is on the `A` string, so we start by finding `C#` on the `A` string (fret 4). 
+2) Now, we find where shape one should be placed. `C#` needs to be the 5th note we play, which means we need to start on `F#` (fret 2). 
+3) Now that we've found the relative major, we need to figure out what the 4th note in that scale is, as Lydian is the 4th mode. 
+4) Playing through the shape brings us to `B`, our final answer.  
 
 ### Practice utility
-I've thrown together a [**minigame**](/relative-scales) you can play to test yourself. I suggest doing this with a guitar in your hands first, 
-and then eventually without one. Don't expect to understand this concept immediately, instead take your time getting familiar with it and practice.
+I've thrown together a [**minigame**](/scale-game) you can play to test yourself. I suggest doing this with a guitar in your hands first, 
+and then eventually without one. This can be quite confusing at first, but with practice it becomes easier and easier 
+
+Using the steps listed above, try to see how many you can get right in a row. <!-- To help, refer to my [**scale lookup**](/scale-lookup) utility. -->
+

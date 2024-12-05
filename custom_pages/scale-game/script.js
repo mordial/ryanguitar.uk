@@ -23,7 +23,7 @@ let notes = {
 }
 
 let answer
-let streak = 0
+let streak = 20
 
 window.onload = function() 
 {
@@ -53,7 +53,6 @@ function generateQuestion()
     let scale = [ ] 
     let index = notes.sharps.indexOf( root ) 
     let keySignature = sharp
-
 
     for( let x of intervals ) {   
         scale.push( notes.sharps[ ( index % notes.sharps.length ) ] ) 
@@ -91,13 +90,17 @@ function generateQuestion()
     }
 
     let mode = Math.floor( Math.random() * modes.length ) 
-    let target = mode
-    
+    let target = mode    
+
+    console.log( scale, mode, length ) 
+
     //Make sure they're not the same number :)
     while( target === mode ) target = Math.floor( Math.random() * modes.length ) 
 
     let questionRoot = scale[ mode ]
-    if( questionRoot.endsWith( 'b' ) ) {
+
+    //Root length must be 2 to prevent b natural being turned into bb
+    if( questionRoot.endsWith( 'b' ) && questionRoot.length === 2 ) {
         //Turn the lowercase b into an actual flat symbol
         questionRoot = questionRoot.substring( 0, 1 ) + flat
     }
@@ -139,9 +142,12 @@ function submit()
 
     if( streak >= 2 ) {
 
-        streakText = streak + ' in a row'
+        streakText = streak + ' in a row<br>'
 
-        if( streak >= 5 ) streakText += ' 🔥'
+        //if( streak >= 5 ) streakText += ' 🔥'
+
+        for( let x = 0; x < Math.floor( streak / 5 ); x++ ) streakText += '🔥'
+
     }
 
     document.getElementById( 'streak' ).innerHTML = streakText

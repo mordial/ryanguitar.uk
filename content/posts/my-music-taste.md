@@ -2,7 +2,7 @@
 title: 'My Music Taste'
 summary: 'The music I actually listen to'
 date: 2024-12-04T00:00:00Z
-draft: true
+draft: false
 readTime: true
 ---
 >"It's so important to listen to music, to listen again and again. Eat, sleep and drink music." - Arturo Sandoval

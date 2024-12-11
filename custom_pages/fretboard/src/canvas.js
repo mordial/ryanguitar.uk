@@ -182,7 +182,7 @@ function setValues( data )
 
     if( fretCount <= 20 ) 
     {
-        canvas.style.width = ( fretCount * 100 ) + 'px'
+        canvas.style.width = ( fretCount * 4.75  ) + '%'
     } else 
     {
         canvas.style.width = "95%" 

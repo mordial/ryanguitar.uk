@@ -16,6 +16,8 @@ let offset = {
    left: 35,
   right: 20 
 }
+let flat  = '♭'
+
 
 export function draw( data ) 
 {
@@ -40,11 +42,14 @@ export function draw( data )
         ctx.moveTo( offset.left,                   offset.top + ( x * stringGap ) ) 
         ctx.lineTo( offset.left + fretboard.width, offset.top + ( x * stringGap ))
 
+        let pitch = data.strings[ x ].pitch 
+        if( pitch.endsWith( 'b' ) && pitch.length === 2 ) pitch = pitch.substring( 0, 1 ) + flat
+
         ctx.fillStyle = colours.leftClick
         ctx.font = "17px literata"
         ctx.textAlign = "center"
         ctx.fillText( 
-            data.strings[ x ].pitch.toUpperCase(),
+            pitch.toUpperCase(),
             10, 
             offset.top + ( x * stringGap ) + 6,
         )
@@ -102,6 +107,8 @@ export function draw( data )
 
             let note = notes[ data.accidentals ][ ( rootOffset + selected.fret ) % 12 ] 
             note = note.charAt( 0 ).toUpperCase() + note.slice( 1 )
+
+            if( note.endsWith( 'b' ) && note.length === 2 ) note = note.substring( 0, 1 ) + flat
 
             ctx.fillText( note, 
                 offset.left + ( ( selected.fret - data.startFret ) * fretGap ) + ( fretGap / 2 ), 

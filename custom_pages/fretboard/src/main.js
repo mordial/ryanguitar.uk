@@ -2,6 +2,7 @@ import { draw, clicked } from './canvas'
 import loadPreset from './presets'
 
 let maxFrets = 35
+let flat  = '♭'
 
 export const notes = {
     sharps: [ 'a', 'a#', 'b', 'c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#' ],
@@ -141,6 +142,8 @@ export function gatherParameters( preset )
     data.accidentals = inputs.accidentals.value 
 
     data.tuning = data.tuning.filter( x => x !== '' && notes[ data.accidentals ].includes( x ) )
+
+    console.log( data.tuning ) 
 
     if( data.tuning.length < 2 ) 
         return alert( 'At least 2 strings required' ) 

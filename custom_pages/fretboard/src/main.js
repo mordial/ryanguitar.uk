@@ -115,6 +115,7 @@ export function gatherParameters( preset )
 
     data.tuning = inputs.tuning.value
         .replace( /\s/g, '' )
+        .trim()
         .toLowerCase() 
         .split( ',' )
         .reverse() 
@@ -138,6 +139,13 @@ export function gatherParameters( preset )
     inputs.frets.value = data.startFret + '-' + data.endFret
 
     data.accidentals = inputs.accidentals.value 
+
+    data.tuning = data.tuning.filter( x => x !== '' && notes[ data.accidentals ].includes( x ) )
+
+    if( data.tuning.length < 2 ) 
+        return alert( 'At least 2 strings required' ) 
+    if( data.tuning.join( '' ).includes( 'b' ) && data.tuning.join( '' ).includes( '#' ) ) 
+        return alert( 'Invalid tuning' )
 
     setUrlParams( data ) 
 

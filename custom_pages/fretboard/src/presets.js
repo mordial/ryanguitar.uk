@@ -1,6 +1,6 @@
 import { gatherParameters, notes } from './main' 
 import { colours } from './canvas'
-import * as presets from '../presets.json' 
+import * as presets from '../../intervals.json' 
 
 
 export default function loadPreset( data )
@@ -27,10 +27,16 @@ export default function loadPreset( data )
         return 
     }
 
+    if( !notes.sharps.includes( root ) && !notes.flats.includes( root ) ) 
+        return alert( 'Invalid root note' )
+
     if( !notes[ data.accidentals ].includes( root ) ) 
     {
-        alert( 'Incorrect accidentals entered' )
-        return 
+        data.accidentals = data.accidentals === 'flats' ? 'sharps' : 'flats' 
+
+        document.accidentalsForm.accidentals.value = data.accidentals
+        
+        return loadPreset( data ) 
     }
     if( Object.keys( presets ).includes( scale ) ) 
     {

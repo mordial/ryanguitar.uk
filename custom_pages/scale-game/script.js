@@ -1,4 +1,4 @@
-import * as scales from '../fretboard/presets.json'
+import * as scales from '../intervals.json'
 
 let flat  = '♭'
 let sharp = '#'
@@ -135,8 +135,14 @@ function submit()
     } else {
         streak = 0
         result.innerText = '❌'
-        streakText = '<span id="incorrect"> The answer was ' + answer.toUpperCase() + '</span>'
+        streakText = `<span id="incorrect"> 
+            The answer was ${ 
+                answer.endsWith( 'b' ) && answer.length === 2 ? 
+                    ( answer.substring( 0, 1 ) + flat ).toUpperCase() : answer.toUpperCase()
+            } 
+        </span>`
     }
+
 
     document.getElementById( 'input' ).value = ''
 

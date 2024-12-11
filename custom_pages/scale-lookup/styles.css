@@ -1,24 +1,23 @@
 #container {
-    margin: 0 auto; 
-    width: 30%;
-    display: flex;
+    margin: auto;
     padding-top: 10vh;
+    width: 60vw; 
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
-#container > * { margin: 10px; }
+#title { font-size: 28px; text-align: center; }
+#container > * { margin: auto; margin-top: 15px; }
 
-#question  { text-align: center; font-size: 25px; width: 70vw; color: var(--text-light) }
-#record    { color: var(--text-darker); font-size: 16px; }
-#incorrect { color: #570017  }
+#info {
+    color: var(--text-darker); 
+    font-size: 15px; 
+    text-align: center;
+    margin-top: 5px; 
+}
 
 a { color: var(--text-darker); text-decoration: underline; }
-
 a:hover { color: var(--text-light); cursor: pointer; }
-#keysig { color: var(--text-darker); font-size: 22px; }
-#streak { color: var(--text-darker); font-size: 16px; text-align: center; }
 
 input {
     font-family: 'literata';
@@ -27,6 +26,7 @@ input {
     font-size: 18px;
     text-align: center;
     color: var(--text-light);
+    width: 40%;
 }
 
 button {
@@ -39,6 +39,7 @@ button {
     background-color: var(--button-bg);
     box-shadow: var(--button-shadow);
     color: var(--button-text-colour);
+    max-width: 200px;
 }
 
 button:hover {
@@ -46,19 +47,28 @@ button:hover {
     background-color: var(--button-hover)
 }
 
-#details {
+@media only screen and (max-width: 600px) {
+    #container { width: 90vw; }
+    button { width: 70%; } 
+}
+
+#output {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+} 
+#modeInfo {
+    padding-bottom: 10px;
+    text-align: center;
+} 
+#mode {
+    text-decoration: none;
 }
-
-@media only screen and (max-width: 700px) {
-    #container { width: 90% }    
-    #question  { width: 90vw }
-    #streak { font-size: 20px }
-    #record { font-size: 18px }
-    a { font-size: 18px }
-    input { width: 80vw } 
-    button { width: 50vw }
+#mode:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+#root {
+    font-size: 25px;
+    color: var(--text-light)
 }

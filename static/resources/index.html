@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Resources | Ryan Kavanagh </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>@import url(https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap);:root {
+    --font: 'literata';
+
+    --darkest: rgb(20, 20, 20);
+    
+    --text-light: white;
+    --text-darker: #939394;
+
+    --button-bg: #ffffff1e; 
+    --button-shadow: rgba(0, 0, 0, 0.075) 0px 0px 0px 1px;
+    --button-hover: #575757; 
+    --button-text-colour: #7a7a7a;
+
+    background-color: var(--darkest);
+    font-family: var(--font);
+}
+
+body {
+    overflow: hidden; 
+    margin: 0; 
+    color: var(--text-light)
+}</style>
+ 
+        <style>#container {
+    display: flex;
+    flex-direction: column; 
+    width: 60%;
+    margin: auto;
+    padding-top: 15vh;
+    align-items: center;
+}
+
+a { color: var(--text-light); text-decoration: none;}
+
+#item {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+#back { 
+    color: var(--text-darker); 
+    text-decoration: underline;
+    padding-bottom: 30px;
+}
+
+#back:hover { color: var(--text-light); cursor: pointer; }
+
+#title { 
+    font-size: 26px;  
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
+#title:hover { color: var(--text-darker); }
+
+#description { font-size: 15px; color: var(--text-darker); text-align: center; }
+
+@media only screen and (max-width: 700px) {
+    #container { width: 90% }    
+}</style>
+    </head>
+    <body>
+        <div id="container"> 
+            <a id="back" onclick="history.back()"> < back</a>
+        </div>
+    </body>
+    <script>(()=>{"use strict";const e=JSON.parse('{"/fretboard":{"title":"Fretboard visualizer","description":"A fretboard visualizer with customizable tuning, string count, and the ability to load scales by name"},"/scale-game":{"title":"Relative scale game","description":"A mini-game for practicing your understanding of how modes relate to one another"},"/scale-lookup":{"title":"Scale lookup","description":"Given a scale, lists all relative scales"}}');window.onload=function(){let t=document.getElementById("container");for(let i in e){let n=document.createElement("div");n.id="item";let a=`\n            <a href="${i}" id="title">${e[i].title}</a>\n            <div id="description">${e[i].description}</div>\n        `;n.innerHTML=a,t.appendChild(n)}}})();</script>
+</html>

@@ -2,7 +2,7 @@
 title: 'Relative Scales'
 date: 2024-11-18T00:00:00Z
 toc: true
-draft: true
+draft: false
 ---
 ![](/img/mode-relationships.png)
 

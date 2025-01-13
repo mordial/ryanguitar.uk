@@ -2,7 +2,7 @@
 title: 'Functional Harmony'
 date: 2024-12-11T00:00:00Z
 toc: true
-draft: true
+draft: false
 toc: true 
 ---
 ![](/img/functional-harmony-chart.png)

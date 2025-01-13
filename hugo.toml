@@ -1,69 +1,11 @@
 languageCode = 'en-us'
-title = "Ryan Kavanagh"
-theme = 'typo'
+title = 'Ryan Kavanagh'
+author = 'Ryan Kavanagh' 
+email = 'contact@ryanguitar.uk'
+baseURL = 'https://ryanguitar.uk'
+theme = 'nostyleplease' 
 
 ignoreLogs = ['warning-goldmark-raw-html']
 
 [markup.goldmark.renderer]
 unsafe = true
-
-[taxonomies]
-tag = 'tags'
-
-[params]
-# Meta description
-description = "ryanguitar.uk"
-
-# Appearance settings
-theme = 'dark'
-colorPalette = 'default'
-hideHeader = false
-
-showFooter = true 
-footerContent = 'ryanguitar.uk 🎸'
-
-# Intro on main page, content is markdown
-homeIntroTitle = 'Welcome'
-homeIntroContent = """
-I'm Ryan, a guitar teacher and software developer based in London. I've been teaching guitar for almost 4 years, 
-and currently work with over 30 students every week. Contact me [via email](mailto:contact@ryanguitar.uk) if you'd 
-like to arrange a lesson.
-"""
-
-# Collection to display on home
-homeCollectionTitle = 'Posts'
-homeCollection = 'posts'
-
-# Lists parameters
-paginationSize = 100
-listSummaries = true
-listDateFormat = '2 Jan 2006'
-
-# Breadcrumbs
-breadcrumbs = true
-
-# [[params.social]]
-# name = "youtube"
-# url = "https://youtube.com/@ryanguitaruk"
-
-# [[params.social]]
-# name = "instagram"
-# url = "https://instagram.com/ryanguitar.uk"
-
-# Main menu pages
-[[params.menu]]
-name = "home"
-url = "/"
-
-[[params.menu]]
-name = "posts"
-url = "/posts"
-
-[[params.menu]]
-name = "resources"
-url = "/resources" 
-
-# Syntax highlight on code blocks
-[markup]
-[markup.highlight]
-style = 'algol'

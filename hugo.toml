@@ -2,10 +2,13 @@ languageCode = 'en-us'
 title = 'Ryan Kavanagh'
 author = 'Ryan Kavanagh' 
 email = 'contact@ryanguitar.uk'
-baseURL = 'ryanguitar.uk/'
+baseURL = 'https://ryanguitar.uk/'
 theme = 'nostyleplease' 
 
 ignoreLogs = ['warning-goldmark-raw-html']
 
 [markup.goldmark.renderer]
 unsafe = true
+
+[params]
+favicon = "/favicon.ico"

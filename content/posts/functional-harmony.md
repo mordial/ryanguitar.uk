@@ -22,7 +22,7 @@ For each major scale, this process creates chords with the following qualities:
 - VI: Minor 
 - vii: Diminished
 
-The use of roman numerals is explained [here](#roman-numeral-analysis). Note that this only applies
+The use of roman numerals is explained [here](#roman-numerals). Note that this only applies
 to the major scale, and that the order changes depending on which kind of scale is being used. 
 
 Understanding the process that creates these chords is not as important as knowing what the chords actually are.

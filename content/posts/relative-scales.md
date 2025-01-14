@@ -66,7 +66,7 @@ Try playing E minor pentatonic over the same A dorian backing track you used bef
 Playing over modal backing tracks can be fun, but I personally find it more interesting to apply modes in other contexts. 
 
 Each mode is generally considered to have either a major or minor quality. As a result, they can be used to improvise in their _parallel_ 
-major or minor keys. Their qualities correspond to the quality of their I chord (read my post on [functional harmony](/functional-harmony)
+major or minor keys. Their qualities correspond to the quality of their I chord (read my post on [functional harmony](/posts/functional-harmony)
 for more details). 
 
 The diatonic ii chord is minor in quality, and the second mode is considered to be minor also. The IV chord is major in quality, as is the 

@@ -5,10 +5,15 @@ email = 'contact@ryanguitar.uk'
 baseURL = 'https://ryanguitar.uk/'
 theme = 'nostyleplease' 
 
+#This allows inline html in markdown 
 ignoreLogs = ['warning-goldmark-raw-html']
-
 [markup.goldmark.renderer]
-unsafe = true
+    unsafe = true
 
+#nostyleplease requires this for the favicon to appear correctly
 [params]
-favicon = "/favicon.ico"
+    favicon = "/favicon.ico"
+
+
+[taxonomies]
+#Leaving this empty prevents /tags and /categories being generated

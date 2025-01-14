@@ -28,8 +28,6 @@ to the major scale, and that the order changes depending on which kind of scale 
 Understanding the process that creates these chords is not as important as knowing what the chords actually are.
 Focus your efforts on memorizing the order listed above.
 
----
-
 ### Chord Extensions
 While the diatonic series is constructed using the notes from some particular scale, the actual naming of a chord pays 
 respect to the intervals present within the chord. All of these intervals are relative to the chord's root note.
@@ -78,3 +76,7 @@ highest. The sub-dominant family acts as an intermediary, bridging the other two
 
 You can see (and hear) this motion in the common ii-V-I progression. It moves from a sub-dominant chord to a dominant chord,
 driving up the tension before returning to the tonic. In C major, this would be Dm-G-C. 
+
+The diagram at the top of this article highlights typical movements between each of the diatonic chords. Pick a starting point 
+and follow the arrows however you please to come up with a chord progression that abides by the rules of functional harmony. The 
+arrow leading away from the I chord indicates that you can chose to move to whichever chord you wish. 

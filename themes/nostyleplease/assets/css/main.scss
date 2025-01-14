@@ -26,8 +26,8 @@
   }
 
   code:not(pre > code) {
-    background-color: $--primary-text-color;
-    color: $--bg-color;
+    background-color: $--highlight;
+    color: $--visited-link-color;
   }
 
   *:target {

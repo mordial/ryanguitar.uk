@@ -6,7 +6,7 @@ London based guitar teacher, currently working with more than 30 students a week
 Contact me [via email](mailto:contact@ryanguitar.uk) if you would like to arrange a lesson. 
 
 
-<iframe id="diagram-1" width="100%" height="100"></iframe>
+<!--iframe id="diagram-1" width="100%" height="100"></iframe>
 <script>
     document.getElementById( 'diagram-1' ).src = '/fretboard?config=' + encodeURIComponent( 
         JSON.stringify({
@@ -15,4 +15,4 @@ Contact me [via email](mailto:contact@ryanguitar.uk) if you would like to arrang
             value: 'test'
         })
     )
-</script>
+</script -->

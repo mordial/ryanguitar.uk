@@ -41,7 +41,7 @@ All we need to do is figure out the root note of the major scale which is relati
 modes in the order listed above is vital. The mnemonic ``"I don't particularly like modes a lot"`` is helpful, with the joint function of 
 reminding you that "a lot" is, in fact, two words. Note that the "ionian" mode **is** the major scale. 
 
-Open YouTube and search for a A dorian backing track in whatever style you want. Dorian is the second mode of the major scale, so we
+Open YouTube and search for an A dorian backing track in whatever style you want. Dorian is the second mode of the major scale, so we
 need to find the root of the major scale with A as its second note. This exercise has the benefit of also helping you to learn the shape
 of particular intervals on the fretboard. The scale we are looking for is G major. 
 
@@ -58,7 +58,7 @@ in any mode.
 
 Lets take A dorian as an example one more time. If I would like to use minor pentatonic shapes to improvise, I need to find the root of the 
 minor scale that is relative to A dorian. We figured that G was the root of the relative major of A dorian, and from here we now need to find 
-the root of the relative aeolian. As aeolian is the 6th mode, we just need to figure out what the 6th note in G major is. That note is E. 
+the root of the relative aeolian. As aeolian is the sixth mode, we just need to figure out what the sixth note in G major is. That note is E. 
 
 Try playing E minor pentatonic over the same A dorian backing track you used before. It should sound totally _fine_. 
 
@@ -119,5 +119,5 @@ There are other groups of scales that can be memorized using the same principals
 
 Each of these scales are explicit alterations to the shapes you will have memorized, and each have seven modes. While theses scales
 themselves might not be particularly well known, some of their modes definitely are. For example, the fourth mode of the double 
-harmonic major scale is Hungarian minor. This scale features prominently in the music of Django Reinhardt and is a staple of gypsy jazz, 
+harmonic major scale is Hungarian minor. This scale features prominently in the music of Django Reinhardt and is a staple of Gypsy jazz, 
 and is even alternatively known as the Gypsy minor scale. 

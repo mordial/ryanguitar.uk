@@ -28,6 +28,8 @@ to the major scale, and that the order changes depending on which kind of scale 
 Understanding the process that creates these chords is not as important as knowing what the chords actually are.
 Focus your efforts on memorizing the order listed above.
 
+---
+
 ### Chord Extensions
 While the diatonic series is constructed using the notes from some particular scale, the actual naming of a chord pays 
 respect to the intervals present within the chord. All of these intervals are relative to the chord's root note.

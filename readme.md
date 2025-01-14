@@ -1,2 +1,2 @@
-articles should act more as reference material. 
-uploaded videos should be exercises crafted by me.
+## My personal site
+[Visit here](https://ryanguitar.uk)

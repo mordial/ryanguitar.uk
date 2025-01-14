@@ -10,6 +10,8 @@ Every scale has 6 other scales that can be considered "relative" to it. This mea
 the same notes, just ordered differently. This concept is extremely useful when improvising, and can
 allow you to intelligently reuse shapes and phrases across different keys and modes. 
 
+---
+
 ## The Minor Pentatonic Scale
 The first time this concept appears for most guitarists is when learning to use the minor pentatonic 
 scale to improvise in a major key. 
@@ -25,6 +27,8 @@ This works because of relative scales.
 Fret 2 of the E string is the note F#, which is the relative minor of A major. Each of these scales 
 contain the same notes, just ordered differently. As a result, their notes fall onto the fretboard in 
 the exact same way. Hence, the same minor pentatonic boxes can be used. 
+
+---
 
 ## Modes of the Major Scale 
 This concept extends to every mode of the major scale. For each major scale, every note corresponds to
@@ -49,6 +53,7 @@ F as your root. There is a lot more to modal improvisation, but this is a good s
 This process will allow you to reuse pre-existing knowledge to improvise modally, rather than learning 
 a completely new series of shapes for each mode. 
 
+---
 
 ## Melodic and Harmonic Minor
 Everything mentioned above applies to both the melodic and harmonic minor scales. If you consider both 

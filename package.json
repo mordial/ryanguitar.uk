@@ -6,6 +6,10 @@
   "repository": "https://github.com/mordial/ryanguitar.uk.git",
   "author": "Laptop <contact@ryankavanagh.dev>",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
   "devDependencies": {
     "css-loader": "^7.1.2",
     "html-bundler-webpack-plugin": "^4.4.2",
